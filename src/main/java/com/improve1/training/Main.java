@@ -14,6 +14,8 @@ public class Main {
         String player1Name = input.nextLine();
         System.out.print("Please, enter Player 2 name: ");
         String player2Name = input.nextLine();
+        String enterScoreUserGuide = String.format("PLEASE, remember this: When You are asked - Who scored a point, please enter '1' for %s, '2' for %s or '0' to cancel-the-game.", player1Name, player2Name);
+        System.out.println(enterScoreUserGuide);
         System.out.println();
 
         TennisGame game = new TennisGame(player1Name, player2Name);

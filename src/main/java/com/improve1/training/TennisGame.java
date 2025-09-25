@@ -15,7 +15,6 @@ public class TennisGame {
         this.player1Score = ScoreEnum.LOVE;
         this.player2Score = ScoreEnum.LOVE;
         System.out.println("Tennis game started between " + player1Name + " and " + player2Name + "...");
-        System.out.println();
     }
 
     public void play(Scanner input) {
@@ -24,14 +23,12 @@ public class TennisGame {
             return;
         }
 //        System.out.println("Enter scores (e.g., '1 0' means " + player1Name + " scores, '0 1' means " + player2Name + " scores, '0 0' to end):");
-        String enterScoreMessage = String.format("Who scored a point ('1' means %s scores, '2' means %s scores, '0' to cancel-the-game):", player1Name, player2Name);
-        System.out.println(enterScoreMessage);
-        // "Who scored a point (e.g., '1' means " + player1Name + " scores, '2' means " + player2Name + " scores, '0' to end):"
-        // "Who scored a point (e.g., '1' means " + player1Name + " scores, '2' means " + player2Name + " scores, '0' to end):"
-        // "Who scored a point (e.g., '1 0' means %s scores, '0 1' means %s scores, '0 0' to end):
+//        String enterScoreMessage = String.format("Who scored a point ('1' means %s scores, '2' means %s scores, '0' to cancel-the-game): ", player1Name, player2Name);
+        String enterScoreMessage = "Who scored a point? --> ";
+        System.out.print(enterScoreMessage);
         int winnerPlayerId = input.nextInt();
-        System.out.println();
-        while (winnerPlayerId != 0 || !theGameIsOver) {
+//        System.out.println();
+        while (winnerPlayerId != 0 && !theGameIsOver) {
             if (winnerPlayerId == 1) {
                 increaseScore(player1Name);
                 showResult();
@@ -44,10 +41,9 @@ public class TennisGame {
             if (theGameIsOver) {
                 break;
             }
-            System.out.println(enterScoreMessage);
+            System.out.print(enterScoreMessage);
             winnerPlayerId = input.nextInt();
         }
-//        this.showResult();
         System.out.println("Game ended.");
     }
 
@@ -66,12 +62,12 @@ public class TennisGame {
                     player2Score = ScoreEnum.FORTY;
                 } else {
                     player1Score = ScoreEnum.WIN;
-                    System.out.println(player1Name + " wins the game!");
+                    System.out.println(player1Name + " wins the game! Congratulations!");
                     theGameIsOver = true;
                 }
             } else if (player1Score == ScoreEnum.ADVANTAGE) {
                 player1Score = ScoreEnum.WIN;
-                System.out.println(player1Name + " wins the game!");
+                System.out.println(player1Name + " wins the game! Congratulations!");
                 theGameIsOver = true;
             }
         } else if (playerName.equals(player2Name)) {
@@ -98,30 +94,33 @@ public class TennisGame {
             }
         }
     }
-//    private void increaseScore(ScoreEnum playerScore) {
-//        if (playerScore == ScoreEnum.LOVE) {
-//            player1Score = ScoreEnum.FIFTEEN;
-//        } else if (playerScore == ScoreEnum.FIFTEEN) {
-//            player1Score = ScoreEnum.THIRTY;
-//        } else if (playerScore == ScoreEnum.THIRTY) {
-//            player1Score = ScoreEnum.FORTY;
-//        } else if (playerScore == ScoreEnum.FORTY) {
-//            if (player2Score == ScoreEnum.FORTY) {
-//                player1Score = ScoreEnum.ADVANTAGE;
-//            } else if (player2Score == ScoreEnum.ADVANTAGE) {
-//                player2Score = ScoreEnum.FORTY;
-//            } else {
-//                player1Score = ScoreEnum.WIN;
-//                System.out.println(player1Name + " wins the game!");
-//            }
-//        } else if (playerScore == ScoreEnum.ADVANTAGE) {
-//            player1Score = ScoreEnum.WIN;
-//            System.out.println(player1Name + " wins the game!");
-//        }
-//    }
 
     public void showResult() {
-        System.out.println("Current Score: " + player1Name + " " + player1Score + " - " + player2Score + " " + player2Name);
-        System.out.println();
+//        if (player1Score == ScoreEnum.WIN || player2Score == ScoreEnum.WIN) {
+//            theGameIsOver = true;
+//        }
+        String player1ScoreStr = mapScoreToString(player1Score);
+        String player2ScoreStr = mapScoreToString(player2Score);
+        System.out.println("Current Score: " + player1Name + " " + player1ScoreStr + " - " + player2ScoreStr + " " + player2Name);
+//        System.out.println();
+    }
+
+    private String mapScoreToString(ScoreEnum player1Score) {
+        switch (player1Score) {
+            case LOVE:
+                return "0";
+            case FIFTEEN:
+                return "15";
+            case THIRTY:
+                return "30";
+            case FORTY:
+                return "40";
+            case ADVANTAGE:
+                return "Advantage";
+            case WIN:
+                return "Win";
+            default:
+                return "";
+        }
     }
 }
