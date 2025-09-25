@@ -13,11 +13,11 @@ If one player wins, the application will celebrate the winner and the execution 
 
 Sample usage:
 Start<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-Please, enter Player 1 name: Ann
-Please, enter Player 2 name: Maria
-PLEASE, remember this: When You are asked - Who scored a point, please enter '1' for Ann, '2' for Maria or '0' to cancel-the-game.
-
-Tennis game started between Ann and Maria...
+Please, enter Player 1 name: Ann  
+Please, enter Player 2 name: Maria  
+PLEASE, remember this: When You are asked - Who scored a point, please enter '1' for Ann, '2' for Maria or '0' to cancel-the-game.  
+  
+Tennis game started between Ann and Maria...  
 Current Score: Ann 0 - 0 Maria
 Who scored a point? --> 1
 Current Score: Ann 15 - 0 Maria
