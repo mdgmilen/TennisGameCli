@@ -15,7 +15,7 @@ Sample usage:
 Start<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  
 Please, enter Player 1 name: Ann  
 Please, enter Player 2 name: Maria  
-PLEASE, remember this: When You are asked - Who scored a point, please enter '1' for Ann, '2' for Maria or '0' to cancel-the-game.  
+PLEASE, remember this: When You are asked - Who scored a point, enter '1' for Ann, '2' for Maria or '0' to cancel-the-game.  
   
 Tennis game started between Ann and Maria...  
 Current Score: Ann 0 - 0 Maria  
