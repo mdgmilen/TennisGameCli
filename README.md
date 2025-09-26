@@ -2,7 +2,9 @@
 Study programming and play tennis in terminal /console.  
   
 Business requirements follow...  
-  xxx
+  Use the tennis game rules to implement a console game. The user to be asked to enter the names of 2 /two players.  
+  Then the user to be asked by the program - which player wins the current point. And this question to repeat till the end of the game.
+  Please, review the following Sample-usage section:
   
 Sample usage:  
 Start<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  
